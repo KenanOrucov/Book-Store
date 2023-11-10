@@ -13,6 +13,6 @@ spring:
     database-platform: org.hibernate.dialect.MySQL57Dialect
     show-sql: true
   liquibase:
-    drop-first: true
+    drop-first: false
     change-log: classpath:db/changelog/db.changelog-master.yaml
-    enabled: false
+    enabled: true
