@@ -1,0 +1,12 @@
+#spring:
+#  mail:
+#    host: smtp.yandex.ru
+#    port: 587
+#    username:
+#    password:
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true

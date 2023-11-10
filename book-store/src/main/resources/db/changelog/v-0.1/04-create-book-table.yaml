@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: 04-create-book-table
+      author: Kanan
+      changes:
+        - createTable:
+            tableName: book
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: kanan_PK
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  name: author_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_books_to_author
+                    references: author(id)
+
+#        - addForeignKeyConstraint:
+#            baseTableName: book
+#            baseColumnNames: author_id
+#            referencedTableName: author
+#            referencedColumnNames: id
+#            constraintName: Book_Author_FK

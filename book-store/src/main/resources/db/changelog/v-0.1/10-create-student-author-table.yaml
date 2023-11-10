@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 10-create-student-author-table
+      author: Kanan
+      changes:
+        - createTable:
+            tableName: author_student
+            columns:
+              - column:
+                  name: author_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_authors_to_students
+                    references: author(id)
+              - column:
+                  name: student_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_students_to_authors
+                    references: student(id)

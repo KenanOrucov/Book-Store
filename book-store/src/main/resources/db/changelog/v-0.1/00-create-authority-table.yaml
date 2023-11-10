@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 06-create-authority-table
+      author: Kanan
+      changes:
+        - createTable:
+            tableName: authority
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: authority
+                  type: VARCHAR(255)

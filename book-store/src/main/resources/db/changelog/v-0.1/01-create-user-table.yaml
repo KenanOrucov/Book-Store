@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01-create-user-table
+      author: Kanan
+      changes:
+        - createTable:
+            tableName: my_custom_user
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+

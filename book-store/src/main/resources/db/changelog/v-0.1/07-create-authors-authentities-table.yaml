@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 07-create-authors-auth-table
+      author: Kanan
+      changes:
+        - createTable:
+            tableName: auth_authorities
+            columns:
+              - column:
+                  name: author_id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: authority_id
+                  type: VARCHAR(255)
+                  constraints:
+                    primaryKey: true

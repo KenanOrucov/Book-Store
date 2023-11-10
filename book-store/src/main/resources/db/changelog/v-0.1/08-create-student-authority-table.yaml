@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 08-create-student-authority-table
+      author: Kanan
+      changes:
+        - createTable:
+            tableName: student_authorities
+            columns:
+              - column:
+                  name: student_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_students_to_authorities
+                    references: student (id)
+              - column:
+                  name: authority_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_authorities_to_students
+                    references: authority(id)
